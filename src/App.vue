@@ -7,6 +7,7 @@
       <FormFields @save="saveActivity"/>
       <div class="space">
         <div class="lista">
+          <NotFoundVue v-if="activities.length === 0" text="Nenhuma atividade cadastrada!" />
           <ActivityRow v-for="(activity, index) in activities" :key="index" :activity="activity"/>
         </div>
       </div>
@@ -20,13 +21,15 @@ import NavBar from './components/NavBar.vue'
 import FormFields from './components/FormFields.vue'
 import ActivityRow from './components/ActivityRow.vue';
 import IActivity from './interfaces/IActivity'
+import NotFoundVue from './components/NotFound.vue';
 
 export default defineComponent({
   name: 'App',
   components: {
     NavBar,
     FormFields,
-    ActivityRow
+    ActivityRow,
+    NotFoundVue
   },
   data() {
     return {

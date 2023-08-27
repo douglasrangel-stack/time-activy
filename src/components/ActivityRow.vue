@@ -2,7 +2,7 @@
     <div class="box has-text-weight-bold">
         <div class="columns">
             <div class="column is-7">
-                {{ activity.descriptionActivity }}
+                {{ activity.descriptionActivity || "Atividade sem descrição" }}
             </div>
             <div class="column">
                 <ElapsedTime :timeSecond="activity.timeActivity" />
